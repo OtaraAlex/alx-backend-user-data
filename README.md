@@ -4,6 +4,9 @@ This repository contains programs written for the Backend user data track at the
 The specific list of projects contained is as follows:
 
 * [0x00-personal_data](./0x00-personal_data)
+* [0x01-Basic_authentication](0x01-Basic_authentication)
+* [0x02-Session_authentication](0x02-Session_authentication)
+* [0x03-user_authentication_service](0x03-user_authentication_service)
 
 ## Author :
 * [OtaraAlex](https://github.com/OtaraAlex)
