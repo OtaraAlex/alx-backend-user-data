@@ -23,7 +23,7 @@ pip3 install bcrypt
 
 ## Tasks
 
-0. User model
+### 0\. User model
 
 In this task you will create a SQLAlchemy model named `User` for a database table named `users` (by using the [mapping declaration](https://docs.sqlalchemy.org/en/13/orm/tutorial.html#declare-a-mapping) of SQLAlchemy).
 
@@ -59,7 +59,7 @@ bob@dylan:~$
 ``````
 File: [user.py](./user.py)
   
-1. create user
+### 1\. create user
 
 In this task, you will complete the DB class provided below to implement the `add_user` method.
 
@@ -126,7 +126,7 @@ bob@dylan:~$
 
 File: [db.py](./db.py)
   
-2. Find user
+### 2\. Find user
 
 In this task you will implement the `DB.find_user_by` method. This method takes in arbitrary keyword arguments and returns the first row found in the `users` table as filtered by the method’s input arguments. No validation of input arguments required at this point.
 
@@ -179,7 +179,7 @@ bob@dylan:~$
 
 File: [db.py](./db.py)
   
-3. update user
+### 3\. update user
 
 In this task, you will implement the `DB.update_user` method that takes as argument a required `user_id` integer and arbitrary keyword arguments, and returns `None`.
 
@@ -222,7 +222,7 @@ bob@dylan:~$
 
 File: [db.py](./db.py)
   
-4. Hash password
+### 4\. Hash password
 
 In this task you will define a `_hash_password` method that takes in a `password` string arguments and returns bytes.
 
@@ -245,7 +245,7 @@ bob@dylan:~$
 
 File: [auth.py](./auth.py)
   
-5. Register user
+### 5\. Register user
 
 In this task, you will implement the `Auth.register_user` in the `Auth` class provided below:
 
@@ -302,7 +302,7 @@ bob@dylan:~$
 
 File: [auth.py](./auth.py)
   
-6. Basic Flask app
+### 6\. Basic Flask app
 
 In this task, you will set up a basic Flask app.
 
@@ -317,7 +317,7 @@ if __name__ == "__main__":
 ``````
 File: [app.py](./app.py)
   
-7. Register user
+### 7\. Register user
 
 In this task, you will implement the end-point to register a user. Define a `users` function that implements the `POST /users` route.
 
@@ -401,7 +401,7 @@ bob@dylan:~$
 ``````
 File: [app.py](./app.py)
   
-8. Credentials validation
+### 8\. Credentials validation
 
 In this task, you will implement the `Auth.valid_login` method. It should expect `email` and `password` required arguments and return a boolean.
 
@@ -434,7 +434,7 @@ bob@dylan:~$
 ``````
 File: [auth.py](./auth.py)
   
-9. Generate UUIDs
+### 9\. Generate UUIDs
 
 In this task you will implement a `_generate_uuid` function in the `auth` module. The function should return a string representation of a new UUID. Use the `uuid` module.
 
@@ -442,7 +442,7 @@ Note that the method is private to the `auth` module and should **NOT** be used 
 
 File: [auth.py](./auth.py)
   
-10. Get session ID
+### 10\. Get session ID
 
 In this task, you will implement the `Auth.create_session` method. It takes an `email` string argument and returns the session ID as a string.
 
@@ -473,7 +473,7 @@ bob@dylan:~$
 `````` 
 File: [auth.py](./auth.py)
   
-11. Log in
+### 11\. Log in
 
 In this task, you will implement a `login` function to respond to the `POST /sessions` route.
 
@@ -542,7 +542,7 @@ bob@dylan:~$
 ``````
 File: [app.py](./app.py)
   
-12. Find user by session ID
+### 12\. Find user by session ID
 
 In this task, you will implement the `Auth.get_user_from_session_id` method. It takes a single `session_id` string argument and returns the corresponding `User` or `None`.
 
@@ -552,7 +552,7 @@ Remember to only use public methods of `self._db`.
 
 File: [auth.py](./auth.py)
   
-13. Destroy session
+### 13\. Destroy session
 
 In this task, you will implement `Auth.destroy_session`. The method takes a single `user_id` integer argument and returns `None`.
 
@@ -562,7 +562,7 @@ Remember to only use public methods of `self._db`.
 
 File: [auth.py](./auth.py)
   
-14. Log out
+### 14\. Log out
 
 In this task, you will implement a `logout` function to respond to the `DELETE /sessions` route.
 
@@ -572,7 +572,7 @@ Find the user with the requested session ID. If the user exists destroy the sess
 
 File: [app.py](./app.py)
   
-15. User profile
+### 15\. User profile
 
 In this task, you will implement a `profile` function to respond to the `GET /profile` route.
 
@@ -637,7 +637,7 @@ bob@dylan:~$
 ``````
 File: [app.py](./app.py)
   
-16. Generate reset password token
+### 16\. Generate reset password token
 
 In this task, you will implement the `Auth.get_reset_password_token` method. It take an `email` string argument and returns a string.
 
@@ -645,7 +645,7 @@ Find the user corresponding to the email. If the user does not exist, raise a `V
 
 File: [auth.py](./auth.py)
   
-17. Get reset password token
+### 17\. Get reset password token
 
 In this task, you will implement a `get_reset_password_token` function to respond to the `POST /reset_password` route.
 
@@ -657,7 +657,7 @@ If the email is not registered, respond with a 403 status code. Otherwise, gener
 ``````
 File: [app.py](./app.py)
   
-18. Update password
+### 18\. Update password
 
 In this task, you will implement the `Auth.update_password` method. It takes `reset_token` string argument and a `password` string argument and returns `None`.
 
@@ -667,7 +667,7 @@ Otherwise, hash the password and update the user’s `hashed_password` field wit
 
 File: [auth.py](./auth.py)
   
-19. Update password end-point
+### 19\. Update password end-point
 
 In this task you will implement the `update_password` function in the `app` module to respond to the `PUT /reset_password` route.
 
@@ -681,7 +681,7 @@ If the token is valid, respond with a 200 HTTP code and the following JSON paylo
 ``````
 File: [app.py](./app.py)
   
-20. End-to-end integration test
+### 20\. End-to-end integration test
 
 Start your app. Open a new terminal window.
 
